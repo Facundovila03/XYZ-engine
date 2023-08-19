@@ -16,6 +16,7 @@ function App() {
     Y_min: 0,
     Z_max: 0,
     Z_min: 0,
+    mod: false,
   });
 
   return (

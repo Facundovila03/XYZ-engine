@@ -1,6 +1,56 @@
 .FormContainer {
   display: flex;
   flex-direction: column;
-  padding: 2rem;
-  background-color: cadetblue;
+  padding: 3rem;
+  border-radius: 50px;
+  background: var(--accent1);
+  box-shadow: -20px -20px 60px #2d283a, 20px 20px 60px #3d364e;
+  margin: 2rem;
+}
+
+.FormContainer input {
+  height: 2.2rem;
+  width: 20rem;
+  margin-bottom: 15px;
+  border-radius: 50px;
+  padding-left: 10px;
+  border: none;
+}
+
+.FormContainer textarea {
+  width: 20rem;
+  height: 5rem;
+  resize: none;
+  margin-bottom: 15px;
+  border-radius: 20px;
+  padding: 10px;
+  padding-right: 0px;
+  border: none;
+}
+
+.valueInputs input {
+  width: 47%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.valueInputs {
+  margin-top: 10px;
+  display: flex;
+  position: relative;
+  width: 20rem;
+}
+.aux {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* compatibility */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
 }
