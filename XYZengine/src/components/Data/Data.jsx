@@ -1,18 +1,25 @@
 /* eslint-disable react/prop-types */
 import Table from "../Table/Table";
 import styles from "./Data.module.css";
+import { jsPDF } from "jspdf";
 
 function Data({ info }) {
+  const file = new jsPDF({ orientation: "p", unit: "px" });
+
+  const download = async () => {
+    await file.html(document.querySelector("#data"));
+    file.save("data.pdf");
+  };
+
   return (
-    <div className={styles.container}>
+    <div
+      id="data"
+      className={styles.container}>
       <h1 className={styles.title}>
         {info?.projectName ? info.projectName : "project name"}
       </h1>
       <h4>Project description</h4>
-      <textarea
-        className={styles.descriptionText}
-        disabled={true}
-        value={info?.projectDescription}></textarea>
+      <div className={styles.descriptionText}>{info?.projectDescription}</div>
       <label>
         <h4>Client name</h4>
         <p>{info?.clientName}</p>
@@ -22,7 +29,9 @@ function Data({ info }) {
         <p>{info?.contractor}</p>
       </label>
       <Table info={info} />
-      <button className={styles.downloadButton}>
+      <button
+        className={styles.downloadButton}
+        onClick={download}>
         <svg
           width="40px"
           height="40px"

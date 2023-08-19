@@ -12,24 +12,32 @@ function Form({ info, setInfo }) {
   return (
     <form className={styles.FormContainer}>
       <input
+        min={1}
+        max={30}
         placeholder={"Enter Project Name"}
         name="projectName"
         value={info?.projectName}
         onChange={(e) => handleChange(e)}
       />
       <textarea
+        minLength={10}
+        maxLength={300}
         placeholder={"Project Description"}
         name="projectDescription"
         value={info?.projectDescription}
         onChange={(e) => handleChange(e)}
       />
       <input
+        min={1}
+        max={20}
         name="clientName"
         value={info?.clientName}
         placeholder={"Client name"}
         onChange={(e) => handleChange(e)}
       />
       <input
+        min={1}
+        max={20}
         name="contractor"
         value={info?.contractor}
         placeholder={"Contractor"}
